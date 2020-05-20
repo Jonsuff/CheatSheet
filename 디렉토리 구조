@@ -1,0 +1,24 @@
+폴더 구조
+
+setting : 변수 세팅 관련 디렉토리
+- config : 일반적으로 통용되는 변수 지정 파일
+
+
+tfrecord : tfrecord 관련 디렉토리
+- tfrecord_writer : tfrecord writing 함수 파일
+- tfrecord_reader : tfrecord loading & decoding 함수 파일
+
+
+utils : 자주 쓰는 연산 디렉토리
+- data_preprocessing : annotation 데이터 분배 함수 파일
+- calculations : iou, bbox_loss, label_loss, objectness_loss 연산 파일
+- convolutions : class BatchNormalization, convolution 연산, residual_block, upsampling 동작 파일
+
+
+yolo : yolo 관련 디렉토리
+- darknet_53 : darknet 구조 파일
+- yolov3 : yolo 모델 파일
+- test : yolo 동작 테스트 파일
+- training : yolo 학습 동작 파일
+
+
