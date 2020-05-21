@@ -10,11 +10,12 @@ def yolov3(input_data):
     return conv_sbbox, conv_mbbox, conv_lbbox
 
 
-def yolo_decoder(input_data):
+def yolo_decoder(input_data, i):
     # conv_layer결과를 실제 값으로 디코딩
     # input_data는 bbox_center & wh가 비율로 표시된 상태
-    # xy : (ANCHOR + sigmoid(raw_xy)) * 8 or 16 or 32
-    # wh : exp(raw_wh) * ANCHOR * 8 or 16 or 32
+    # xy : (ANCHOR + sigmoid(raw_xy)) * stride[i]
+    # wh : exp(raw_wh) * ANCHOR * stride[i]
+    stride = [8, 16, 32]
     conv_shape = tf.shape(input_data)
     batch_size = conv_shape[0]
     output_size = conv_shape[1]
